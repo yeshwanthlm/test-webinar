@@ -22,11 +22,3 @@ jobs:
           REMOTE_HOST: ${{ secrets.HOST_DNS }}
           REMOTE_USER: ${{ secrets.USERNAME }}
           TARGET: ${{ secrets.TARGET_DIR }}
-          script: |
-            sudo su -
-            apt-get update -y
-            apt-get install -y apache2
-            cd home
-            mv * /var/www/html
-            systemctl enable apache2
-            systemctl start apache2
